@@ -1,0 +1,34 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "nedb": "../data",
+  "authentication": {
+    "secret": "51d7451555db5d7880ebda8e2fadb4a5df350a28a8a075d22a6747dca2cb9c583d9f86c25f9babe447a53341da4d3f09e509cb0541a65aebd516363b7b5b94713e9535463b567088e3ee0fbe7374e3ae2da4ce41746ab58e6401cb13baaf500987ef744b635ec4f23d1b282af5ed1046a4a3b1dcf9377d8d2a7a43f7ab5fea680d76dc2c4cca403d7c93c73f6c4d89ccca6746777294bc32e77ec982ff08e7d2cffa8843c3b729595843f84da2c957582523b6d2f5367edd8864615dfe57814c859ff5613b0f29f63beec69cf254658437a84cdeee1fe4f731ced6cdde04b991835f1c1b95d893b41bc373dae3ed21a30e8f934bfac161c0f66c45df45af13d7",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  }
+}
